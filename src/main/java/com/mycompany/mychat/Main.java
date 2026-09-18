@@ -16,11 +16,14 @@ public class Main {
     public static void main(String[] args) {
 
         // Collects the user's personal information during registration.
+        // Scanner is used to receive input from the user (Oracle, 2024).
         Scanner input = new Scanner(System.in);
 
         Login login = new Login();
 
         System.out.println("===== Welcome to MyChat =====");
+        
+        // String variables are used to store text entered by the user (Oracle, 2024).
 
         System.out.print("Enter your first name: ");
         String firstName = input.nextLine();
@@ -49,6 +52,7 @@ public class Main {
 
         System.out.println();
         System.out.println(registrationMessage);
+        // The equals() method is used to compare String values (Oracle, 2024).
         
         // Displays the available options to the user.
 
@@ -68,6 +72,7 @@ public class Main {
             System.out.println(login.returnLoginStatus());
         }
 
+        // The Scanner is closed after input has been completed (Oracle, 2024).
         input.close();
     }
 }
