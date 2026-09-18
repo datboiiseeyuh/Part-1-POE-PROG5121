@@ -133,4 +133,14 @@ public class LoginTest {
     }
 }
 
+// Reference: JUnit (2026). JUnit 5 User Guide.
+// Used as a reference for writing and running unit tests using JUnit 5.
+// https://junit.org/junit5/docs/current/user-guide/
+
+
+
+// Reference: JUnit (2026). Assertions.
+// Used as a reference for JUnit assertions used to test the Login methods.
+// https://junit.org/junit5/docs/current/api/org.junit.jupiter.api/org/junit/jupiter/api/Assertions.html
+
 

@@ -107,3 +107,18 @@ public class Login {
         this.lastName = lastName;
     }
 }
+
+
+// Reference: Oracle (2024). String Class.
+// Used as a reference for Java String methods used for validation and comparison.
+// https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html
+
+
+// Reference: Oracle (2024). Pattern Class.
+// Used as a reference for regular expressions used to validate input.
+// https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/regex/Pattern.html
+
+
+// Reference: Oracle (2024). Classes and Objects.
+// Used as a reference for creating and working with Java classes and objects.
+// https://docs.oracle.com/javase/tutorial/java/javaOO/

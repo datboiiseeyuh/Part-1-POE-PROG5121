@@ -61,4 +61,32 @@ public class Main {
         input.close();
     }
 }
-//refrence list 
+
+
+/*
+ * REFERENCES
+ *
+ * JUnit (2026). JUnit 5 User Guide. Available at:
+ * https://junit.org/junit5/docs/current/user-guide/
+ * (Accessed: 18 September 2026).
+ *
+ * Oracle (2024). Classes and Objects. Available at:
+ * https://docs.oracle.com/javase/tutorial/java/javaOO/
+ * (Accessed: 18 September 2026).
+ *
+ * Oracle (2024). Scanner Class. Available at:
+ * https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Scanner.html
+ * (Accessed: 18 September 2026).
+ *
+ * Oracle (2024). String Class. Available at:
+ * https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html
+ * (Accessed: 18 September 2026).
+ *
+ * Oracle (2024). System Class. Available at:
+ * https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/System.html
+ * (Accessed: 18 September 2026).
+ *
+ * Oracle (2024). Pattern Class. Available at:
+ * https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/regex/Pattern.html
+ * (Accessed: 18 September 2026).
+ */
