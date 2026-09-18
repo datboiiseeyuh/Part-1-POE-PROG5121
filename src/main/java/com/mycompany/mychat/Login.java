@@ -24,6 +24,8 @@ public class Login {
      * +27 followed by exactly 9 digits.
      */
     private final String cellPhoneRegex = "^\\+27[0-9]{9}$";
+    
+    // Validates whether the username follows the required format.
 
     public boolean checkUserName(String username) {
 
@@ -46,13 +48,16 @@ public class Login {
     public String registerUser(String username, String password,
             String cellPhoneNumber) {
 
+        // Validates whether the cellphone number follows the required format.
         if (!checkUserName(username)) {
 
+        // Verifies the username and password entered by the user.
             return "Username is not correctly formatted; please ensure that "
                     + "your username contains an underscore and is no more "
                     + "than five characters in length.";
         }
 
+        // Checks whether the password meets the required complexity requirements.
         if (!checkPasswordComplexity(password)) {
 
             return "Password is not correctly formatted; please ensure that "
