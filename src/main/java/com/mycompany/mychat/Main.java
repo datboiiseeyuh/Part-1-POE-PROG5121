@@ -6,10 +6,16 @@ import java.util.Scanner;
  *
  * @author Student
  */
+
+/**
+ * Main class responsible for running the MyChat application
+ * and interacting with the user.
+ */
 public class Main {
 
     public static void main(String[] args) {
 
+        // Collects the user's personal information during registration.
         Scanner input = new Scanner(System.in);
 
         Login login = new Login();
@@ -30,6 +36,8 @@ public class Main {
 
         System.out.print("Enter your South African cell phone number: ");
         String cellPhoneNumber = input.nextLine();
+        
+        // Allows the user to enter their credentials and attempts to log them in.
 
         login.setName(firstName, lastName);
 
@@ -41,6 +49,8 @@ public class Main {
 
         System.out.println();
         System.out.println(registrationMessage);
+        
+        // Displays the available options to the user.
 
         if (registrationMessage.equals("User registered successfully.")) {
 
