@@ -179,49 +179,54 @@ public String SentMessage(Scanner scanner) {
     // Stores messages in a valid JSON array in messages.json.
     public boolean storeMessage() {
 
-        storedMessages.add(this);
-
-        try (FileWriter writer = new FileWriter("messages.json")) {
-
-            writer.write("[\n");
-
-            for (int i = 0; i < storedMessages.size(); i++) {
-
-                Message current = storedMessages.get(i);
-
-                writer.write("  {\n");
-                writer.write("    \"messageID\": \""
-                        + escapeJSON(current.messageID) + "\",\n");
-                writer.write("    \"messageHash\": \""
-                        + escapeJSON(current.messageHash) + "\",\n");
-                writer.write("    \"recipient\": \""
-                        + escapeJSON(current.recipient) + "\",\n");
-                writer.write("    \"message\": \""
-                        + escapeJSON(current.message) + "\",\n");
-                writer.write("    \"messageNumber\": "
-                        + current.messageNumber + "\n");
-                writer.write("  }");
-
-                if (i < storedMessages.size() - 1) {
-                    writer.write(",");
-                }
-
-                writer.write("\n");
-            }
-
-            writer.write("]\n");
-            return true;
-
-        } catch (IOException exception) {
-
-            System.out.println("Error storing messages: "
-                    + exception.getMessage());
-
-            storedMessages.remove(this);
-            return false;
-        }
+    if (messageID == null || messageHash == null
+            || recipient == null || message == null) {
+        System.out.println("Cannot store an incomplete message.");
+        return false;
     }
 
+    storedMessages.add(this);
+
+    try (FileWriter writer = new FileWriter("messages.json")) {
+
+        writer.write("[\n");
+
+        for (int i = 0; i < storedMessages.size(); i++) {
+
+            Message current = storedMessages.get(i);
+
+            writer.write("  {\n");
+            writer.write("    \"messageID\": \""
+                    + escapeJSON(current.messageID) + "\",\n");
+            writer.write("    \"messageHash\": \""
+                    + escapeJSON(current.messageHash) + "\",\n");
+            writer.write("    \"recipient\": \""
+                    + escapeJSON(current.recipient) + "\",\n");
+            writer.write("    \"message\": \""
+                    + escapeJSON(current.message) + "\",\n");
+            writer.write("    \"messageNumber\": "
+                    + current.messageNumber + "\n");
+            writer.write("  }");
+
+            if (i < storedMessages.size() - 1) {
+                writer.write(",");
+            }
+
+            writer.write("\n");
+        }
+
+        writer.write("]\n");
+        return true;
+
+    } catch (IOException exception) {
+
+        System.out.println("Error storing messages: "
+                + exception.getMessage());
+
+        storedMessages.remove(this);
+        return false;
+    }
+}
     // Escapes special characters so that the JSON remains valid.
     private String escapeJSON(String value) {
 
