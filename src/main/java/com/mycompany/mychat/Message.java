@@ -71,18 +71,21 @@ public class Message {
     }
 
     // Checks whether the message is shorter than 250 characters.
-    public String checkMessageLength() {
+   public String checkMessageLength() {
 
-        if (message != null && message.length() < 250) {
-            return "Message ready to send.";
-        }
-
-        int excess = message == null ? 0 : message.length() - 249;
-
-        return "Message exceeds 250 characters by " + excess
-                + "; please reduce the size.";
+    if (message == null || message.trim().isEmpty()) {
+        return "Message cannot be empty. Please enter a message.";
     }
 
+    if (message.length() < 250) {
+        return "Message ready to send.";
+    }
+
+    int excess = message.length() - 249;
+
+    return "Message exceeds 250 characters by " + excess
+            + "; please reduce the size.";
+}
     // Creates the message hash using the ID, message number,
     // first word and last word.
     public String createMessageHash() {
