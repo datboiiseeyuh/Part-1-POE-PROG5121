@@ -16,6 +16,12 @@ import java.util.Scanner;
  * Stores message information and supports message processing.
  */
 
+
+
+
+
+
+
 public class Message {
 
     private String messageID;
