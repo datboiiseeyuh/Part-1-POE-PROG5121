@@ -32,13 +32,30 @@ public class Login {
         return username.contains("_") && username.length() <= 5;
     }
 
-    public boolean checkPasswordComplexity(String password) {
+   public boolean checkPasswordComplexity(String password) {
 
-        return password.length() >= 8
-                && password.matches(".*[A-Z].*")
-                && password.matches(".*[0-9].*")
-                && password.matches(".*[^a-zA-Z0-9].*");
+    if (password == null || password.length() < 8) {
+        return false;
     }
+
+    boolean hasCapital = false;
+    boolean hasNumber = false;
+    boolean hasSpecial = false;
+
+    for (int i = 0; i < password.length(); i++) {
+        char character = password.charAt(i);
+
+        if (Character.isUpperCase(character)) {
+            hasCapital = true;
+        } else if (Character.isDigit(character)) {
+            hasNumber = true;
+        } else if (!Character.isLetterOrDigit(character)) {
+            hasSpecial = true;
+        }
+    }
+
+    return hasCapital && hasNumber && hasSpecial;
+}
 
     public boolean checkCellPhoneNumber(String cellPhoneNumber) {
 
@@ -58,12 +75,12 @@ public class Login {
         }
 
         // Checks whether the password meets the required complexity requirements.
+        
         if (!checkPasswordComplexity(password)) {
-
-            return "Password is not correctly formatted; please ensure that "
-                    + "the password contains at least eight characters, "
-                    + "a capital letter, a number, and a special character.";
-        }
+    return "Password is not correctly formatted; please ensure that "
+            + "the password contains at least eight characters, "
+            + "a capital letter, a number, and a special character.";
+}
 
         if (!checkCellPhoneNumber(cellPhoneNumber)) {
 
