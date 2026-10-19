@@ -152,24 +152,24 @@ public String SentMessage(Scanner scanner) {
 
     // Displays details of messages successfully sent in this run.
     public String printMessages() {
+    StringBuilder result = new StringBuilder();
 
-        StringBuilder result = new StringBuilder();
-
-        for (Message sent : sentMessages) {
-
-            result.append("Message ID: ")
-                    .append(sent.messageID)
-                    .append("\nMessage Hash: ")
-                    .append(sent.messageHash)
-                    .append("\nRecipient: ")
-                    .append(sent.recipient)
-                    .append("\nMessage: ")
-                    .append(sent.message)
-                    .append("\n\n");
-        }
-
-        return result.toString();
+    for (Message sent : sentMessages) {
+        result.append("Message Number: ")
+                .append(sent.messageNumber)
+                .append("\nMessage ID: ")
+                .append(sent.messageID)
+                .append("\nMessage Hash: ")
+                .append(sent.messageHash)
+                .append("\nRecipient: ")
+                .append(sent.recipient)
+                .append("\nMessage: ")
+                .append(sent.message)
+                .append("\n\n");
     }
+
+    return result.toString();
+}
 
     // Returns the number of messages successfully sent.
     public int returnTotalMessagess() {
