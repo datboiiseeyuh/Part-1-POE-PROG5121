@@ -150,8 +150,16 @@ public class Main {
 
                 case "2":
 
-                    System.out.println("Coming Soon.");
-                    break;
+                        String recentMessages = new Message().printMessages();
+
+                        if (recentMessages.isEmpty()) {
+                            System.out.println("No messages have been sent yet.");
+                        } else {
+                            System.out.println("\n===== Recently Sent Messages =====");
+                            System.out.println(recentMessages);
+                        }
+
+                        break;
 
                 case "3":
 

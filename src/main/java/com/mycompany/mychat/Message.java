@@ -12,10 +12,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 
-/**
- * Represents a message sent through the MyChat application.
- * Stores message information and supports message processing.
- */
+
+
+
 public class Message {
 
     private String messageID;
