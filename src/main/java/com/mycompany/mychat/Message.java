@@ -263,8 +263,9 @@ public String SentMessage(Scanner scanner) {
     }
 
     public void setMessage(String message) {
-        this.message = message;
-    }
+    this.message = message;
+    this.messageHash = createMessageHash();
+}
 
     public String getMessageHash() {
         return messageHash;
@@ -279,7 +280,8 @@ public String SentMessage(Scanner scanner) {
     }
 
     public void setMessageNumber(int messageNumber) {
-        this.messageNumber = messageNumber;
-    }
+    this.messageNumber = messageNumber;
+    this.messageHash = createMessageHash();
+}
 }
 
