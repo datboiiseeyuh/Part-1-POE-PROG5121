@@ -1,9 +1,37 @@
 [
   {
-    "messageID": "2844588534",
-    "messageHash": "28:3:TESTINGSTORAGE",
+    "messageID": "6507486932",
     "recipient": "+27718693002",
     "message": "Testing storage",
+    "messageHash": "65:3:TESTINGSTORAGE",
+    "messageNumber": 3
+  },
+  {
+    "messageID": "1498057927",
+    "recipient": "+27718693002",
+    "message": "Testing storage",
+    "messageHash": "14:3:TESTINGSTORAGE",
+    "messageNumber": 3
+  },
+  {
+    "messageID": "7499568233",
+    "recipient": "+27718693002",
+    "message": "Testing storage",
+    "messageHash": "74:3:TESTINGSTORAGE",
+    "messageNumber": 3
+  },
+  {
+    "messageID": "3596756221",
+    "recipient": "+27736444195",
+    "message": "ekseee",
+    "messageHash": "35:1:EKSEEEEKSEEE",
+    "messageNumber": 1
+  },
+  {
+    "messageID": "5192375721",
+    "recipient": "+27718693002",
+    "message": "Testing storage",
+    "messageHash": "51:3:TESTINGSTORAGE",
     "messageNumber": 3
   }
 ]
