@@ -1,3 +1,4 @@
+
 package com.mycompany.mychat;
 
 /**
@@ -24,42 +25,45 @@ public class Login {
      * +27 followed by exactly 9 digits.
      */
     private final String cellPhoneRegex = "^\\+27[0-9]{9}$";
-    
-    // Validates whether the username follows the required format.
 
+    // Validates whether the username follows the required format.
     public boolean checkUserName(String username) {
 
-        return username.contains("_") && username.length() <= 5;
+        return username != null
+                && username.contains("_")
+                && username.length() <= 5;
     }
 
-   public boolean checkPasswordComplexity(String password) {
+    public boolean checkPasswordComplexity(String password) {
 
-    if (password == null || password.length() < 8) {
-        return false;
-    }
-
-    boolean hasCapital = false;
-    boolean hasNumber = false;
-    boolean hasSpecial = false;
-
-    for (int i = 0; i < password.length(); i++) {
-        char character = password.charAt(i);
-
-        if (Character.isUpperCase(character)) {
-            hasCapital = true;
-        } else if (Character.isDigit(character)) {
-            hasNumber = true;
-        } else if (!Character.isLetterOrDigit(character)) {
-            hasSpecial = true;
+        if (password == null || password.length() < 8) {
+            return false;
         }
-    }
 
-    return hasCapital && hasNumber && hasSpecial;
-}
+        boolean hasCapital = false;
+        boolean hasNumber = false;
+        boolean hasSpecial = false;
+
+        for (int i = 0; i < password.length(); i++) {
+
+            char character = password.charAt(i);
+
+            if (Character.isUpperCase(character)) {
+                hasCapital = true;
+            } else if (Character.isDigit(character)) {
+                hasNumber = true;
+            } else if (!Character.isLetterOrDigit(character)) {
+                hasSpecial = true;
+            }
+        }
+
+        return hasCapital && hasNumber && hasSpecial;
+    }
 
     public boolean checkCellPhoneNumber(String cellPhoneNumber) {
 
-        return cellPhoneNumber.matches(cellPhoneRegex);
+        return cellPhoneNumber != null
+                && cellPhoneNumber.matches(cellPhoneRegex);
     }
 
     public String registerUser(String username, String password,
@@ -68,19 +72,19 @@ public class Login {
         // Validates whether the cellphone number follows the required format.
         if (!checkUserName(username)) {
 
-        // Verifies the username and password entered by the user.
+            // Verifies the username and password entered by the user.
             return "Username is not correctly formatted; please ensure that "
                     + "your username contains an underscore and is no more "
                     + "than five characters in length.";
         }
 
         // Checks whether the password meets the required complexity requirements.
-        
         if (!checkPasswordComplexity(password)) {
-    return "Password is not correctly formatted; please ensure that "
-            + "the password contains at least eight characters, "
-            + "a capital letter, a number, and a special character.";
-}
+
+            return "Password is not correctly formatted; please ensure that "
+                    + "the password contains at least eight characters, "
+                    + "a capital letter, a number, and a special character.";
+        }
 
         if (!checkCellPhoneNumber(cellPhoneNumber)) {
 
@@ -129,6 +133,7 @@ public class Login {
         this.lastName = lastName;
     }
 }
+
 
 
 // Reference: Oracle (2024). String Class.
